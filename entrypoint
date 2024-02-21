@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [[ $# == 0 ]] || [[ $1 =~ ^--?h(elp)?$ ]]; then
+    cat <<EOF
+srtinc - Increment the time ranges in SRT files
+Specify two positional parameters:
+- the number of seconds you want to increment by
+- the fully qualified path to the SRT file
+Note that this tool will also renumber the individual records.
+EOF
+    exit
+fi
+
+seconds="${1:?Specify number of seconds}"
+jq \
+  --arg secs "$seconds" \
+  --slurp \
+  --raw-input \
+  --raw-output \
+  --from-file modsrt.jq \
+  "${2:?Specify SRT file}"

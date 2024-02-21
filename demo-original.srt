@@ -1,0 +1,15 @@
+﻿1
+00:00:01,366 --> 00:00:05,366
+Did you know ...
+
+2
+00:00:05,366 --> 00:00:09,366
+about Luigi? It is an enterprise-ready micro frontend framework from SAP.
+
+3
+00:00:09,366 --> 00:00:13,366
+Here you can see the micro frontend framework in action.
+
+4
+00:00:13,366 --> 00:00:17,366
+This Luigi app can host different frontend

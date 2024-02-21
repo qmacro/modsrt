@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker tag modsrt qmacro/modsrt \
+  && docker push qmacro/modsrt

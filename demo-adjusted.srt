@@ -1,0 +1,7 @@
+﻿3
+00:00:09,366 --> 00:00:13,366
+Here you can see the micro frontend framework in action.
+
+4
+00:00:13,366 --> 00:00:17,366
+This Luigi app can host different frontend

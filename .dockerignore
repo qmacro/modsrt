@@ -1,0 +1,6 @@
+*.srt
+*.md
+Dockerfile
+build
+publish
+.git/
