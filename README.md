@@ -99,7 +99,7 @@ You can clone this repo and use it as follows:
 You can also run it without having to clone or install anything, as a single-shot Docker container, like this (working on the same `demo-adjusted.srt` example file from earlier, here assuming that it's in `/Users/dj/work/scratch/`):
 
 ```shell
-docker run --rm -v /Users/dj/work/scratch/:/tmp/ -9 /tmp/demo-adjusted.srt
+docker run --rm -v /Users/dj/work/scratch/:/tmp/ qmacro/modsrt -9 /tmp/demo-adjusted.srt
 ```
 
 > As shown in this example, you'll need to bind mount the directory containing your SRT file, and specify the full path to it as appropriate.
