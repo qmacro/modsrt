@@ -17,7 +17,7 @@ After editing your SRT file to remove some of the initial records so that the ca
 
 ## SRT file format basics
 
-Here's a small SRT example file ([demo-original.srt](./demo-original.srt), containing 4 records, each one consisting of three lines, and there's a blank line separating each record.
+Here's a small SRT example file ([demo-original.srt](./demo-original.srt)) containing 4 records. Each record consists of three lines, and there's a blank line separating each record.
 
 Each record consists of three values, one on each of the three lines:
 
@@ -45,7 +45,7 @@ This Luigi app can host different frontend
 
 ## Adjusting an SRT file - an example
 
-You can see in the example SRT file that talking starts about 1 second into the video (at `00:00:01,366`). But what if we wanted to cut the video so it starts with the demo i.e. where the narrator says "_Here youi can see the micro frontend framework in action._", in record 3. This would mean we would want to edit the SRT file to delete the first two records, so it ends up looking like this ([demo-adjusted.srt](./demo-adjusted.srt)):
+You can see in the example SRT file that the talking starts ("_Did you know ..._") about 1 second into the video (at `00:00:01,366`). But what if we wanted to cut the video so it starts with the demo i.e. where the narrator says "_Here you can see the micro frontend framework in action._", in record 3. This would mean we would want to edit the SRT file to delete the first two records, so it ends up looking like this ([demo-adjusted.srt](./demo-adjusted.srt)):
 
 ```text
 3
@@ -61,7 +61,7 @@ So now we have a video that we have cut so that it starts with "_Here you can se
 
 But we have two more issues to solve:
 
-- all the timestamp ranges are out by 9 seconds
+- now all the timestamp ranges are out by 9 seconds
 - the record numbering now starts at 3, not 1
 
 With this utility, both these issues can be addressed.
@@ -90,11 +90,19 @@ The record numbering has been adjusted now to start from 1, and the timestamp ra
 
 ## Usage
 
-You can clone this repo and use it as shown above, or run it as a single shot Docker container, like this (working on the same `demo-adjusted.srt` example file from earlier, here assuming that it's in `/Users/dj/work/scratch/`):
+You can clone this repo and use it as follows:
+
+```shell
+./entrypoint <seconds> <filename>
+```
+
+You can also run it without having to clone or install anything, as a single-shot Docker container, like this (working on the same `demo-adjusted.srt` example file from earlier, here assuming that it's in `/Users/dj/work/scratch/`):
 
 ```shell
 docker run --rm -v /Users/dj/work/scratch/:/tmp/ -9 /tmp/demo-adjusted.srt
 ```
+
+> As shown in this example, you'll need to bind mount the directory containing your SRT file, and specify the full path to it as appropriate.
 
 This will produce the following output:
 
